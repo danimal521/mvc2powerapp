@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model mvc2powerapp.Models.HomeViewModel
+
+<div class="text-center">
+    
+    <h1 class="display-4">Welcome</h1>
+
+    @using (Html.BeginForm("Subscribe", "Home", FormMethod.Post))
+    {
+        <table>
+            <tr>
+                <td>@Html.LabelFor(model => model.FirstName)</td>
+                <td>@Html.TextBoxFor(model => model.FirstName)</td>
+                <td>@Html.ValidationMessageFor(model => model.FirstName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.LastName)</td>
+                <td>@Html.TextBoxFor(model => model.LastName)</td>
+                <td>@Html.ValidationMessageFor(model => model.LastName)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.PhoneNumber)</td>
+                <td>@Html.TextBoxFor(model => model.PhoneNumber)</td>
+                <td>@Html.ValidationMessageFor(model => model.PhoneNumber)</td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <button type="submit">Subscribe</button>
+                </td>
+            </tr>
+        </table>
+   
+        
+    }
+
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
